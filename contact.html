@@ -347,7 +347,7 @@
             const message = form.querySelector('#message')?.value.trim() || '(sin mensaje)';
 
             
-            const fullMessage = `🦷 *Solicitud de Atención Odontológica*
+            const rawMessage = `🦷 *Solicitud de Atención Odontológica*
 
             ¡Hola! 😊 Me gustaría recibir información o agendar una cita en la Clínica Dental Dr. Ramos.
 
@@ -363,8 +363,12 @@
 
             ✨ Quedo atento(a) a su respuesta. ¡Muchas gracias por su atención!`;
 
+            // Remove leading indentation from each line for display in modal and for WhatsApp text
+            const sendMessage = rawMessage.split('\n').map(line => line.trim()).join('\n');
+            const displayMessage = sendMessage;
+
             const waNumber = '51967959557'; // Clínica Lima
-            const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(fullMessage)}`;
+            const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(sendMessage)}`;
             
                       
             
@@ -413,7 +417,7 @@
             <img src="assets/logo.ramos3.png" alt="Clínica Dental Ramos C. Logo" class="h-12 w-auto object-contain"/>
             <h3 class="font-headline-sm text-headline-sm text-primary">Clínica Dental Ramos C.</h3>
         </div>
-        <p id="wa-modal-message" class="font-body-md text-body-md text-on-surface-variant mb-4 whitespace-pre-line"></p>
+        <p id="wa-modal-message" class="font-body-md text-body-md text-on-surface-variant mb-4 whitespace-pre-line text-justify"></p>
         <div class="flex gap-3 justify-end">
             <button id="wa-modal-cancel" class="px-4 py-2 rounded-lg border border-outline-variant">Cancelar</button>
             <button id="wa-modal-send" class="px-4 py-2 rounded-lg bg-[#25D366] text-white">Enviar a WhatsApp</button>
