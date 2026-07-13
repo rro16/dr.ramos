@@ -346,9 +346,29 @@
             const reason = reasonEl ? reasonEl.options[reasonEl.selectedIndex].text : 'No especificado';
             const message = form.querySelector('#message')?.value.trim() || '(sin mensaje)';
 
-            const fullMessage = `Nueva consulta desde la web\nNombre: ${name}\nTeléfono: ${phone}\nUbicación: ${location}\nMotivo: ${reason}\nMensaje: ${message}`;
+            
+            const fullMessage = `🦷 *Solicitud de Atención Odontológica*
+
+            ¡Hola! 😊 Me gustaría recibir información o agendar una cita en la Clínica Dental Dr. Ramos.
+
+            📋 *Datos del paciente:*
+
+            👤 Nombre: ${name}
+            📞 Teléfono: ${phone}
+            📍 Ubicación: ${location}
+            🦷 Motivo de la consulta: ${reason}
+
+            💬 *Mensaje:*
+            ${message}
+
+            ✨ Quedo atento(a) a su respuesta. ¡Muchas gracias por su atención!`;
+
             const waNumber = '51967959557'; // Clínica Lima
             const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(fullMessage)}`;
+            
+                      
+            
+            
 
             if (btn) {
                 btn.innerText = 'ENVIANDO...';
