@@ -1,24 +1,14 @@
-// Datos oficiales de las sedes (Extraídos de 508dentist-analisis-completo.md)
+// Datos oficiales de las sedes
 const locationData = {
-    "swansea": {
-        value: "swansea",
-        name: "Swansea Office",
-        phoneText: "(508) 570-2332",
-        phoneHref: "tel:+15085702332",
-        address: "1010 Grand Army of the Republic Hwy Ste 10, Swansea, MA 02777",
-        whatsapp: "https://wa.me/15085702332?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20la%20sede%20Swansea.",
-        mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2979.799790514068!2d-71.1895697!3d41.778841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e45bebe69752d5%3A0xe54199c0d45b74c5!2s508%20Dentist%20-%20Swansea!5e0!3m2!1sen!2sus!4v1720640000000!5m2!1sen!2sus",
-        mapLink: "https://maps.app.goo.gl/1S6p8v3TjD2oA4bX8"
-    },
-    "north-attleborough": {
-        value: "north-attleborough",
-        name: "North Attleborough Office",
-        phoneText: "(508) 301-9909",
-        phoneHref: "tel:+15083019909",
-        address: "865 E Washington St, North Attleborough, MA 02760",
-        whatsapp: "https://wa.me/15083019909?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20la%20sede%20North%20Attleborough.",
-        mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2966.5292437648354!2d-71.3197607!3d41.967406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e46244fcd61195%3A0x7d01878d46a48fbe!2s508%20Dentist%20-%20North%20Attleborough!5e0!3m2!1sen!2sus!4v1720640000000!5m2!1sen!2sus",
-        mapLink: "https://maps.app.goo.gl/9xZk7B1B6t9N4bX8"
+    "lima": {
+        value: "lima",
+        name: "Clínica Dental Ramos - SMP",
+        phoneText: "(+51) 967-959-557",
+        phoneHref: "tel:+51967959557",
+        address: "Calle Sta. Mercedes con Alfredo Mendiola, SMP",
+        whatsapp: "https://wa.me/51967959557?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20la%20sede%20SMP.",
+        mapEmbed: "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1951.178087951101!2d-77.06175166174741!3d-12.018982373639592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2spe!4v1783820654628!5m2!1ses-419!2spe",
+        mapLink: "https://www.google.com/maps/dir/?api=1&destination=-12.018982,-77.061752"
     }
 };
 
@@ -77,8 +67,8 @@ function updatePageLocation(selectedBranch) {
 
 // Inicialización al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
-    // Obtener la sede guardada o usar swansea por defecto
-    const savedLocation = localStorage.getItem('selectedLocation') || 'swansea';
+    // Obtener la sede guardada o usar Lima por defecto
+    const savedLocation = localStorage.getItem('selectedLocation') || 'lima';
     
     // Configurar listeners en los selectores
     document.querySelectorAll('[data-location-selector]').forEach(select => {
